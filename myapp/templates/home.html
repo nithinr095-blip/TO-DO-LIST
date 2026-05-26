@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+    <h1 class="todo">TO DO LIST</h1>
+    <ul>
+        {% for list in lists %}
+
+        <li class="task">
+            <span class="taskname">{{list.task}}</span>
+
+            <div class="buttons">
+           
+           <a class="up" href="{% url 'update' list.id %}">Update</a>
+           <a class="del" href="{% url 'delete' list.id %}">Delete</a>
+           </div>
+           </li>
+
+           
+        {% endfor %}
+        <a class="add" href="{% url 'add' %}">ADD</a>
+        </div>
+
+    
+</body>
+</html>

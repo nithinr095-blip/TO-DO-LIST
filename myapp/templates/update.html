@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>UPDATE</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label >task</label>
+        <input type="text" name="task" value="{{lists.task}}"required>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
